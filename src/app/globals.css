@@ -19,3 +19,84 @@ body {
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* Custom Blink Theme */
+.blink.custom {
+  /* Updated color scheme with more vibrant crypto aesthetics */
+  --blink-bg-primary: #0a0e1a;
+  --blink-button: rgba(255, 255, 255, 0.2);
+  --blink-button-disabled: #1e293b;
+  --blink-button-hover: #dfb206;
+  --blink-button-success: #00ff9d;
+  --blink-icon-error: #ff3864;
+  --blink-icon-error-hover: #ff1f59;
+  --blink-icon-primary: #7b89a8;
+  --blink-icon-primary-hover: #a3acbf;
+  --blink-icon-warning: #ffb800;
+  --blink-icon-warning-hover: #ffa200;
+  --blink-input-bg: rgba(12, 19, 34, 0.8);
+  --blink-input-stroke: #2a3655;
+  --blink-input-stroke-disabled: #161e2d;
+  --blink-input-stroke-error: #ff3864;
+  --blink-input-stroke-hover: #4a5980;
+  --blink-input-stroke-selected: #00f2fe;
+  --blink-stroke-error: #ff3864;
+  --blink-stroke-primary: var(--blink-button);
+  --blink-stroke-secondary: #2a3655;
+  --blink-stroke-warning: #ffb800;
+  --blink-text-brand: #00f2fe;
+  --blink-text-button: #ffffff;
+  --blink-text-button-disabled: #4b5563;
+  --blink-text-button-success: #00ff9d;
+  --blink-text-error: #ff3864;
+  --blink-text-error-hover: #ff1f59;
+  --blink-text-input: #ffffff;
+  --blink-text-input-disabled: #4b5563;
+  --blink-text-input-placeholder: #7b89a8;
+  --blink-text-link: #7b89a8;
+  --blink-text-link-hover: #a3acbf;
+  --blink-text-primary: #ffffff;
+  --blink-text-secondary: #7b89a8;
+  --blink-text-success: #00ff9d;
+  --blink-text-warning: #ffb800;
+  --blink-text-warning-hover: #ffa200;
+  --blink-transparent-error: rgba(255, 56, 100, 0.15);
+  --blink-transparent-grey: rgba(123, 137, 168, 0.15);
+  --blink-transparent-warning: rgba(255, 184, 0, 0.15);
+
+  /* Updated border radius for more modern look */
+  --blink-border-radius-rounded-lg: 0.625rem;
+  --blink-border-radius-rounded-xl: 0.875rem;
+  --blink-border-radius-rounded-2xl: 1.25rem;
+  --blink-border-radius-rounded-button: 0.5rem;
+  --blink-border-radius-rounded-input: 0.5rem;
+
+  /* Enhanced shadow for depth */
+  --blink-shadow-container: 0 4px 20px -2px rgba(0, 242, 254, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.1);
+
+  /* Add some new properties for enhanced styling */
+  --blink-glow-primary: 0 0 15px rgba(0, 242, 254, 0.3);
+  --blink-glow-success: 0 0 15px rgba(0, 255, 157, 0.3);
+  --blink-glow-error: 0 0 15px rgba(255, 56, 100, 0.3);
+}
+
+.blink.custom {
+  font-family: "Space Mono", monospace;
+}
+
+/* Add subtle gradient to buttons */
+.blink.custom button {
+  transition: all 0.3s ease;
+  background-color: var(--blink-bg-primary);
+  border: 1px solid var(--blink-button);
+}
+
+/* Add hover effect */
+.blink.custom button:hover {
+  border-color: var(--blink-button-hover);
+  color: var(--blink-button-hover);
+  box-shadow: 0 0 15px rgba(255, 184, 0, 0.3);
+  transform: translateY(-1px);
+  background-color: var(--blink-bg-primary);
+}
