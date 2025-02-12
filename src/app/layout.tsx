@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import { Analytics } from "@vercel/analytics/next";
+
 import { Space_Mono } from "next/font/google";
 import "./globals.css";
 
@@ -41,6 +43,7 @@ export default function RootLayout({
       <body className={`${spaceMono.variable} antialiased`}>
         <main className="min-h-screen bg-gradient-to-b from-black to-gray-900 flex items-center justify-center p-4">
           <AppWalletProvider>{children}</AppWalletProvider>
+          <Analytics />
         </main>
       </body>
     </html>
