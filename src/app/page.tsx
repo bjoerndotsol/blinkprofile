@@ -5,7 +5,7 @@ import { useActionSolanaWalletAdapter } from "@dialectlabs/blinks/hooks/solana";
 import "@dialectlabs/blinks/index.css";
 
 export default function Home() {
-  const actionApiUrl = `http://localhost:3000/api/actions/blinktree`;
+  const actionApiUrl = `${process.env.NEXT_PUBLIC_BASE_URL}/api/actions/link`;
 
   const { adapter } = useActionSolanaWalletAdapter(
     "https://api.mainnet-beta.solana.com"

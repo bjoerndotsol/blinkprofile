@@ -22,21 +22,21 @@ export const GET = async (req: Request) => {
         {
           type: "external-link",
           label: "GitHub",
-          href: `/api/actions/blinktree?url=${encodeUrl(
+          href: `/api/actions/link?url=${encodeUrl(
             "https://github.com/bjoerndotsol"
           )}`,
         },
         {
           type: "external-link",
           label: "X / Twitter",
-          href: `/api/actions/blinktree?url=${encodeUrl(
+          href: `/api/actions/link?url=${encodeUrl(
             "https://x.com/intent/follow?screen_name=bjoerndotsol"
           )}`,
         },
         {
           type: "external-link",
           label: "Telegram",
-          href: `/api/actions/blinktree?url=${encodeUrl(
+          href: `/api/actions/link?url=${encodeUrl(
             "https://t.me/bjoerndotsol"
           )}`,
         },
