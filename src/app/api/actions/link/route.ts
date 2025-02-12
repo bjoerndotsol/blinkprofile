@@ -13,7 +13,7 @@ const encodeUrl = (url: string) => {
 export const GET = async (req: Request) => {
   const payload: ActionGetResponse = {
     type: "action",
-    icon: new URL(req.url).origin + "/banner.jpg",
+    icon: `${new URL(req.url).origin}/banner.jpg`,
     title: "",
     label: "External link",
     description: "",
