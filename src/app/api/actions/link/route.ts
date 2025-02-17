@@ -28,9 +28,11 @@ const encodeUrl = (url: string) => {
 };
 
 export const GET = async (req: Request) => {
+  const baseUrl = new URL(req.url).origin;
+
   const payload: ActionGetResponse = {
     type: "action",
-    icon: `${new URL(req.url).origin}/banner.jpg`,
+    icon: `${baseUrl}/banner.jpg`,
     title: "@bjoerndotsol",
     label: "External link",
     description: "",
@@ -61,7 +63,7 @@ export const GET = async (req: Request) => {
     },
   };
 
-  return new Response(JSON.stringify(payload), {
+  return Response.json(payload, {
     headers,
   });
 };
@@ -82,7 +84,7 @@ export const POST = async (req: Request) => {
     externalLink: decodedUrl,
   };
 
-  return new Response(JSON.stringify(payload), {
+  return Response.json(payload, {
     headers,
   });
 };
