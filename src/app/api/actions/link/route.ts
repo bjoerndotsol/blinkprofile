@@ -14,7 +14,7 @@ export const GET = async (req: Request) => {
   const payload: ActionGetResponse = {
     type: "action",
     icon: `${new URL(req.url).origin}/banner.jpg`,
-    title: "",
+    title: " ",
     label: "External link",
     description: "",
     links: {
