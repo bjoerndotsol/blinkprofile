@@ -11,27 +11,11 @@ const spaceMono = Space_Mono({
   variable: "--font-space-mono",
 });
 
+import { siteMetadata } from "./metadata";
+
 import AppWalletProvider from "./components/AppWalletProvider";
 
-export const metadata: Metadata = {
-  title: "@bjoerndotsol",
-  description: "DevRel Engineer at Dialect Labs",
-  openGraph: {
-    title: "@bjoerndotsol",
-    description: "DevRel Engineer at Dialect Labs",
-    images: [
-      {
-        url: "/banner.jpg",
-      },
-    ],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "@bjoerndotsol",
-    description: "DevRel Engineer at Dialect Labs",
-    images: ["/banner.jpg"],
-  },
-};
+export const metadata: Metadata = siteMetadata;
 
 export default function RootLayout({
   children,
