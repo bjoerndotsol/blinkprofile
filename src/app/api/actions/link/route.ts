@@ -17,12 +17,7 @@ const headers = {
   "x-action-version": "2.4",
 };
 
-// OPTIONS endpoint is required for CORS preflight requests
-// Your Blink won't render if you don't add this
-export const OPTIONS = async () => {
-  return new Response(null, { headers });
-};
-
+// Encode URL to be passed as a query parameter
 const encodeUrl = (url: string) => {
   return encodeURIComponent(url);
 };
@@ -33,7 +28,7 @@ export const GET = async (req: Request) => {
   const payload: ActionGetResponse = {
     type: "action",
     icon: `${baseUrl}/banner.jpg`,
-    title: "@bjoerndotsol",
+    title: "Let's catch up!",
     label: "External link",
     description: "",
     links: {
@@ -67,6 +62,10 @@ export const GET = async (req: Request) => {
     headers,
   });
 };
+
+// OPTIONS endpoint is required for CORS preflight requests
+// Your Blink won't render if you don't add this
+export const OPTIONS = GET;
 
 export const POST = async (req: Request) => {
   const { searchParams } = new URL(req.url);
