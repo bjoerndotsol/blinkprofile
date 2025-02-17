@@ -1,6 +1,7 @@
 import {
   ActionGetResponse,
   ActionPostResponse,
+  ACTIONS_CORS_HEADERS,
   BLOCKCHAIN_IDS,
 } from "@solana/actions";
 
@@ -8,11 +9,7 @@ const blockchain = BLOCKCHAIN_IDS.mainnet;
 
 // Set standardized headers for Blink Providers
 const headers = {
-  "Access-Control-Allow-Origin": "*",
-  "Access-Control-Allow-Methods": "GET, POST, OPTIONS",
-  "Access-Control-Allow-Headers":
-    "Content-Type, x-blockchain-ids, x-action-version",
-  "Content-Type": "application/json",
+  ...ACTIONS_CORS_HEADERS,
   "x-blockchain-ids": blockchain,
   "x-action-version": "2.4",
 };
