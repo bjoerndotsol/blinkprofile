@@ -1,10 +1,27 @@
 import {
   ActionGetResponse,
   ActionPostResponse,
-  createActionHeaders,
+  BLOCKCHAIN_IDS,
 } from "@solana/actions";
 
-const headers = createActionHeaders();
+const blockchain = BLOCKCHAIN_IDS.mainnet;
+
+// Set standardized headers for Blink Providers
+const headers = {
+  "Access-Control-Allow-Origin": "*",
+  "Access-Control-Allow-Methods": "GET, POST, OPTIONS",
+  "Access-Control-Allow-Headers":
+    "Content-Type, x-blockchain-ids, x-action-version",
+  "Content-Type": "application/json",
+  "x-blockchain-ids": blockchain,
+  "x-action-version": "2.4",
+};
+
+// OPTIONS endpoint is required for CORS preflight requests
+// Your Blink won't render if you don't add this
+export const OPTIONS = async () => {
+  return new Response(null, { headers });
+};
 
 const encodeUrl = (url: string) => {
   return encodeURIComponent(url);
@@ -14,7 +31,7 @@ export const GET = async (req: Request) => {
   const payload: ActionGetResponse = {
     type: "action",
     icon: `${new URL(req.url).origin}/banner.jpg`,
-    title: " ",
+    title: "@bjoerndotsol",
     label: "External link",
     description: "",
     links: {
@@ -48,8 +65,6 @@ export const GET = async (req: Request) => {
     headers,
   });
 };
-
-export const OPTIONS = GET;
 
 export const POST = async (req: Request) => {
   const { searchParams } = new URL(req.url);
