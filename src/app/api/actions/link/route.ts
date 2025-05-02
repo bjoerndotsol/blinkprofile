@@ -1,6 +1,5 @@
 import {
   ActionGetResponse,
-  ActionPostResponse,
   ACTIONS_CORS_HEADERS,
   BLOCKCHAIN_IDS,
 } from "@solana/actions";
@@ -35,16 +34,19 @@ export const GET = async (req: Request) => {
     links: {
       actions: [
         {
+          // @ts-expect-error - Client supports "inline-link" but SDK hasn't been updated yet
           type: "inline-link",
           label: "GitHub",
           href: "https://github.com/bjoerndotsol",
         },
         {
+          // @ts-expect-error - Client supports "inline-link" but SDK hasn't been updated yet
           type: "inline-link",
           label: "X / Twitter",
           href: "https://x.com/intent/follow?screen_name=bjoerndotsol",
         },
         {
+          // @ts-expect-error - Client supports "inline-link" but SDK hasn't been updated yet
           type: "inline-link",
           label: "Telegram",
           href: "https://t.me/bjoerndotsol",
