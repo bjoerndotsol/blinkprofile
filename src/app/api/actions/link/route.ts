@@ -23,11 +23,6 @@ export const OPTIONS = async () => {
   });
 };
 
-// Encode URL to be passed as a query parameter
-const encodeUrl = (url: string) => {
-  return encodeURIComponent(url);
-};
-
 export const GET = async (req: Request) => {
   const baseUrl = new URL(req.url).origin;
 
@@ -61,25 +56,4 @@ export const GET = async (req: Request) => {
   return Response.json(payload, {
     headers,
   });
-};
-
-export const POST = async (req: Request) => {
-  const { searchParams } = new URL(req.url);
-  const url = searchParams.get("url");
-
-  if (!url) {
-    console.error("URL parameter is missing");
-    return new Response("URL parameter is required", { status: 400 });
-  }
-
-  const decodedUrl = decodeURIComponent(url);
-
-  const payload: ActionPostResponse = {
-    type: "external-link",
-    externalLink: decodedUrl,
-  };
-
-  return Response.json(payload, {
-    headers,
-  });
-};
+}; 
