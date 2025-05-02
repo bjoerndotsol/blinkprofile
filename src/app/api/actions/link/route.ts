@@ -40,25 +40,19 @@ export const GET = async (req: Request) => {
     links: {
       actions: [
         {
-          type: "external-link",
+          type: "inline-link",
           label: "GitHub",
-          href: `/api/actions/link?url=${encodeUrl(
-            "https://github.com/bjoerndotsol"
-          )}`,
+          href: "https://github.com/bjoerndotsol",
         },
         {
-          type: "external-link",
+          type: "inline-link",
           label: "X / Twitter",
-          href: `/api/actions/link?url=${encodeUrl(
-            "https://x.com/intent/follow?screen_name=bjoerndotsol"
-          )}`,
+          href: "https://x.com/intent/follow?screen_name=bjoerndotsol",
         },
         {
-          type: "external-link",
+          type: "inline-link",
           label: "Telegram",
-          href: `/api/actions/link?url=${encodeUrl(
-            "https://t.me/bjoerndotsol"
-          )}`,
+          href: "https://t.me/bjoerndotsol",
         },
       ],
     },
