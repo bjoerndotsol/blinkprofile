@@ -3,6 +3,11 @@ import { ACTIONS_CORS_HEADERS, ActionsJson } from "@solana/actions";
 export const GET = async () => {
   const payload: ActionsJson = {
     rules: [
+      // handle the root path specifically - map directly to the link action
+      {
+        pathPattern: "/",
+        apiPath: "/api/actions/link",
+      },
       // map all root level routes to an action
       {
         pathPattern: "/*",

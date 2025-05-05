@@ -28,28 +28,34 @@ export const GET = async (req: Request) => {
   const payload: ActionGetResponse = {
     type: "action",
     icon: `${baseUrl}/banner.jpg`,
-    title: "Let's catch up!",
+    title: "GM GM 👋",
     label: "External link",
-    description: "",
+    description: "Shoot me a message and ask me anything about our Blinks, Alerts, or anything else.",
     links: {
       actions: [
         {
           // @ts-expect-error - Client supports "inline-link" but SDK hasn't been updated yet
           type: "inline-link",
-          label: "GitHub",
-          href: "https://github.com/bjoerndotsol",
-        },
-        {
-          // @ts-expect-error - Client supports "inline-link" but SDK hasn't been updated yet
-          type: "inline-link",
-          label: "X / Twitter",
+          label: "X",
           href: "https://x.com/intent/follow?screen_name=bjoerndotsol",
         },
         {
           // @ts-expect-error - Client supports "inline-link" but SDK hasn't been updated yet
           type: "inline-link",
-          label: "Telegram",
+          label: "TG",
           href: "https://t.me/bjoerndotsol",
+        },
+        {
+          // @ts-expect-error - Client supports "inline-link" but SDK hasn't been updated yet
+          type: "inline-link",
+          label: "GH",
+          href: "https://github.com/bjoerndotsol",
+        },
+        {
+          // @ts-expect-error - Client supports "inline-link" but SDK hasn't been updated yet
+          type: "inline-link",
+          label: "Book a 15min meeting",
+          href: "https://calendar.notion.so/meet/bjoerndotsol/15",
         },
       ],
     },
